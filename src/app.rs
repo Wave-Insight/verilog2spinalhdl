@@ -49,11 +49,11 @@ impl Component for App {
         match msg {
             Msg::Run() => {
                 let spinal_text = convert(&self.model_verilog.get_value());
-                self.model_spinal = TextModel::create(&spinal_text, Some("tcl"), None).unwrap();
+                self.model_spinal = TextModel::create(&spinal_text, Some("scala"), None).unwrap();
                 true
             },
             Msg::LoadExample() => {
-                self.model_verilog = TextModel::create(&(example()), Some("python"), None).unwrap();
+                self.model_verilog = TextModel::create(&(example()), Some("verilog"), None).unwrap();
                 true
             },
         }
@@ -75,4 +75,9 @@ impl Component for App {
             </div>
         }
     }
+}
+
+#[test]
+fn test() {
+    println!("{}", convert(&example()))
 }

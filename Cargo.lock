@@ -3,6 +3,23 @@
 version = 3
 
 [[package]]
+name = "Werilog"
+version = "0.1.0"
+source = "git+https://github.com/Wave-Insight/Werilog.git#1075e80bf6cb3423c0c81bc9b7c2ece0d7a5479c"
+dependencies = [
+ "parser_rust_simple",
+]
+
+[[package]]
+name = "aho-corasick"
+version = "0.7.20"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "cc936419f96fa211c1b9166887b38e5e40b19958e5b895be7c1f93adec7071ac"
+dependencies = [
+ "memchr",
+]
+
+[[package]]
 name = "anymap2"
 version = "0.13.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -318,6 +335,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "memchr"
+version = "2.5.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2dffe52ecf27772e601905b7522cb4ef790d2cc203488bbd0e2fe85fcb74566d"
+
+[[package]]
 name = "monaco"
 version = "0.3.0"
 source = "git+https://github.com/siku2/rust-monaco#5684979fd326c875d6ee57306b243219fc38ff46"
@@ -334,6 +357,14 @@ name = "once_cell"
 version = "1.16.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "86f0b0d4bf799edbc74508c1e8bf170ff5f41238e5f8225603ca7caaae2b7860"
+
+[[package]]
+name = "parser_rust_simple"
+version = "0.1.0"
+source = "git+https://github.com/yportne13/parser_rust_simple#5fa1ca82ccc097f28d37080a3664092e1b92fbac"
+dependencies = [
+ "regex",
+]
 
 [[package]]
 name = "paste"
@@ -408,6 +439,23 @@ checksum = "bbe448f377a7d6961e30f5955f9b8d106c3f5e449d493ee1b125c1d43c2b5179"
 dependencies = [
  "proc-macro2",
 ]
+
+[[package]]
+name = "regex"
+version = "1.7.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "e076559ef8e241f2ae3479e36f97bd5741c0330689e217ad51ce2c76808b868a"
+dependencies = [
+ "aho-corasick",
+ "memchr",
+ "regex-syntax",
+]
+
+[[package]]
+name = "regex-syntax"
+version = "0.6.28"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "456c603be3e8d448b072f410900c09faf164fbce2d480456f50eea6e25f9c848"
 
 [[package]]
 name = "ryu"
@@ -537,6 +585,7 @@ checksum = "6ceab39d59e4c9499d4e5a8ee0e2735b891bb7308ac83dfb4e80cad195c9f6f3"
 name = "verilog2spinalhdl"
 version = "0.1.0"
 dependencies = [
+ "Werilog",
  "gloo 0.8.0",
  "gloo-timers",
  "js-sys",
